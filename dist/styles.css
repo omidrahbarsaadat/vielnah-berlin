@@ -205,15 +205,40 @@ h1 mark { width: fit-content; margin-top: 10px; padding: .02em .14em .1em; color
 .quality-item h3 { margin: -5px 0 12px; font-size: 1.45rem; letter-spacing: -.035em; }
 .quality-item p { max-width: 570px; margin: 0; color: rgba(255,255,255,.62); font-size: .93rem; line-height: 1.72; }
 
-.timeline { position: relative; margin: 84px 0 0; padding: 0; list-style: none; }
+.roadmap-status { margin-top: 54px; padding: 24px 28px; display: grid; grid-template-columns: .26fr .55fr 1fr; gap: 26px; align-items: center; color: white; background: var(--ink); border-radius: 22px; }
+.roadmap-status span { color: #94a7ff; font-size: .7rem; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; }
+.roadmap-status strong { font-size: 1rem; letter-spacing: -.02em; }
+.roadmap-status p { margin: 0; color: rgba(255,255,255,.6); font-size: .78rem; line-height: 1.55; }
+.timeline { position: relative; margin: 64px 0 0; padding: 0; list-style: none; }
 .timeline::before { content: ""; position: absolute; top: 28px; bottom: 48px; left: 31px; width: 1px; background: var(--line); }
-.timeline-item { position: relative; padding: 0 0 62px; display: grid; grid-template-columns: 64px 1fr; gap: 35px; }
+.timeline-item { position: relative; padding: 0 0 74px; display: grid; grid-template-columns: 64px 1fr; gap: 35px; }
 .timeline-item:last-child { padding-bottom: 0; }
 .timeline-marker { position: relative; z-index: 1; width: 64px; height: 64px; display: grid; place-items: center; background: var(--paper); border: 1px solid var(--line); border-radius: 50%; }
 .timeline-marker span { color: var(--blue); font-size: .71rem; font-weight: 800; }
+.timeline-item.is-current .timeline-marker { color: white; background: var(--blue); border-color: var(--blue); box-shadow: 0 12px 28px rgba(49,87,246,.25); }
+.timeline-item.is-current .timeline-marker span { color: white; }
+.timeline-content { padding-bottom: 12px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(280px, .72fr); column-gap: 54px; }
 .timeline-phase { margin: 4px 0 8px; color: var(--blue); font-size: .71rem; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; }
-.timeline-item h3 { margin: 0; font-size: clamp(1.55rem, 2.5vw, 2.4rem); letter-spacing: -.045em; }
-.timeline-item div:last-child > p:last-child { max-width: 720px; margin: 15px 0 0; color: var(--ink-soft); line-height: 1.7; }
+.timeline-item h3 { grid-column: 1; margin: 0; font-size: clamp(1.55rem, 2.5vw, 2.4rem); letter-spacing: -.045em; }
+.timeline-content > p:not(.timeline-phase) { grid-column: 1; max-width: 660px; margin: 15px 0 0; color: var(--ink-soft); line-height: 1.7; }
+.timeline-content ul { grid-column: 2; grid-row: 1 / span 4; margin: 4px 0 0; padding: 0; list-style: none; }
+.timeline-content li { position: relative; padding: 0 0 12px 18px; color: #4f5870; font-size: .84rem; line-height: 1.55; }
+.timeline-content li::before { content: ""; position: absolute; top: .65em; left: 0; width: 6px; height: 6px; background: var(--signal); border: 1px solid rgba(16,22,43,.3); border-radius: 50%; }
+.phase-gate { grid-column: 1; margin-top: 22px; padding: 13px 16px; display: flex; gap: 12px; align-items: center; background: white; border: 1px solid var(--line); border-radius: 13px; }
+.phase-gate span { flex: 0 0 auto; color: var(--blue); font-size: .62rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.phase-gate strong { font-size: .76rem; line-height: 1.45; }
+.roadmap-metrics { margin-top: 86px; display: grid; grid-template-columns: .8fr repeat(4, 1fr); border-block: 1px solid var(--line); }
+.roadmap-metrics > p { margin: 0; padding: 27px 24px 27px 0; color: var(--blue); font-size: .7rem; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; }
+.roadmap-metrics div { min-height: 154px; padding: 26px 22px; border-left: 1px solid var(--line); }
+.roadmap-metrics strong { display: block; font-size: clamp(1.8rem, 3vw, 2.8rem); letter-spacing: -.06em; }
+.roadmap-metrics span { display: block; margin-top: 16px; color: var(--ink-soft); font-size: .73rem; line-height: 1.5; }
+.roadmap-next { margin-top: 64px; padding: 48px; display: grid; grid-template-columns: .75fr 1fr; gap: 70px; color: var(--ink); background: var(--signal); border-radius: 30px; }
+.roadmap-next h3 { max-width: 390px; margin: 18px 0 0; font-size: clamp(2rem, 3.6vw, 3.3rem); line-height: 1.02; letter-spacing: -.055em; }
+.roadmap-next ol { margin: 0; padding: 0; list-style: none; counter-reset: next-step; }
+.roadmap-next li { counter-increment: next-step; padding: 13px 0; display: grid; grid-template-columns: 30px 1fr; gap: 12px; border-bottom: 1px solid rgba(16,22,43,.18); font-size: .85rem; font-weight: 700; line-height: 1.5; }
+.roadmap-next li::before { content: counter(next-step, decimal-leading-zero); font-size: .66rem; font-weight: 800; }
+.roadmap-source { margin: 24px 0 0; color: #777f91; font-size: .7rem; line-height: 1.65; }
+.roadmap-source a { color: var(--blue); font-weight: 750; }
 
 .cooperation { padding-top: 0; }
 .coop-panel { position: relative; overflow: hidden; padding: 72px; display: grid; grid-template-columns: 1fr .85fr; gap: 84px; color: white; background: var(--blue); border-radius: var(--radius-xl); box-shadow: 0 30px 70px rgba(49, 87, 246, .22); }
@@ -375,7 +400,15 @@ footer p a:hover { color: white; }
   .quality-item { min-height: 0; grid-template-columns: 44px 1fr; }
   .timeline { margin-top: 58px; }
   .timeline-item { gap: 22px; }
-  .timeline-item div:last-child > p:last-child { font-size: .92rem; }
+  .roadmap-status { grid-template-columns: 1fr; gap: 8px; padding: 24px; }
+  .timeline-content { grid-template-columns: 1fr; }
+  .timeline-content ul { grid-column: 1; grid-row: auto; margin-top: 22px; }
+  .phase-gate { grid-column: 1; align-items: flex-start; flex-direction: column; gap: 6px; }
+  .roadmap-metrics { grid-template-columns: 1fr 1fr; }
+  .roadmap-metrics > p { grid-column: 1 / -1; padding-left: 0; }
+  .roadmap-metrics div { min-height: 145px; border-top: 1px solid var(--line); }
+  .roadmap-metrics div:nth-of-type(odd) { border-left: 0; }
+  .roadmap-next { padding: 34px 24px; grid-template-columns: 1fr; gap: 34px; }
   .coop-panel { padding: 38px 26px; border-radius: 30px; }
   .coop-copy h2 { font-size: 2.85rem; }
   .conversation-card { padding: 32px 25px; }
