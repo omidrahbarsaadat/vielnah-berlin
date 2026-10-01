@@ -11,6 +11,7 @@ diskriminierungssensiblen ambulanten Pflegedienstes in Berlin.
 - geplantes Leistungsangebot
 - Qualität und Qualifizierung
 - Aufbau- und Pilotphasen
+- 18-Monats-Roadmap mit Entscheidungstoren, Pilot-KPIs und 30-Tage-Aktionsplan
 - Kooperationsmodell
 - Gründerteam
 - Bewegte, interaktive Bildinszenierung mit Unterstützung für reduzierte Bewegung
@@ -20,6 +21,8 @@ Die veröffentlichte Website ist als statische, responsive Einzelseite in `dist/
 umgesetzt. Sie benötigt weder Build-Schritt noch Laufzeit-Abhängigkeiten.
 
 Live: https://vielnah-berlin.vercel.app/
+
+Die ausführliche operative Planung steht in [`ROADMAP.md`](ROADMAP.md).
 
 ## Lokal ansehen
 
